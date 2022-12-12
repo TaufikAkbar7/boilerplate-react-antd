@@ -1,6 +1,7 @@
 /* eslint-disable no-undef */
 /* eslint-disable @typescript-eslint/no-var-requires */
 const fs = require("fs");
+const path = require("path");
 const NodePolyfillPlugin = require("node-polyfill-webpack-plugin");
 const evalSourceMap = require("react-dev-utils/evalSourceMapMiddleware");
 const redirectServedPath = require("react-dev-utils/redirectServedPathMiddleware");
@@ -32,6 +33,9 @@ module.exports = {
     }
   ],
   webpack: {
+    alias: {
+      "~": path.resolve(__dirname, "src/")
+    },
     plugins: {
       add: [
         new NodePolyfillPlugin({

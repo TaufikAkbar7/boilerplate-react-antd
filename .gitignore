@@ -11,6 +11,7 @@
 !.yarn/sdks
 !.yarn/versions
 .pnp.*
+.env
 
 # testing
 /coverage

@@ -1,13 +1,24 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
-import App from "./App";
+import { Provider } from "react-redux";
+import { BrowserRouter } from "react-router-dom";
+import { PersistGate } from "redux-persist/integration/react";
+import { AppEntryPoint } from "./features/app/ui";
+import { persistor, store } from "./plugins";
 import reportWebVitals from "./reportWebVitals";
+import "~/plugins/i18n";
+import "~/assets/tailwind.css"
 
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <Provider store={store}>
+        <PersistGate loading={"redux loading..."} persistor={persistor}>
+          <AppEntryPoint />
+        </PersistGate>
+      </Provider>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
