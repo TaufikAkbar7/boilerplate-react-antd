@@ -7,7 +7,8 @@ import { AppEntryPoint } from "./features/app/ui";
 import { persistor, store } from "./plugins";
 import reportWebVitals from "./reportWebVitals";
 import "~/plugins/i18n";
-import "~/assets/tailwind.css";
+import "~/assets/styles/tailwind.css";
+import "~/assets/styles/antd.less";
 
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
 root.render(

@@ -27,7 +27,6 @@ const AppEntryPoint = () => {
   const { currentLocale } = useApp();
 
   useEffect(() => {
-    console.log(currentLocale);
     moment.locale(currentLocale);
     i18n.changeLanguage(currentLocale);
   }, [currentLocale]);

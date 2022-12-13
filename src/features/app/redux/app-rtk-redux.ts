@@ -17,7 +17,7 @@ import { Mutex } from "async-mutex";
 const mutex = new Mutex();
 
 const baseQuery = fetchBaseQuery({
-  baseUrl: process.env.REACT_APP_BASE_URL,
+  baseUrl: import.meta.env.VITE_APP_BASE_URL,
   prepareHeaders(headers, { getState }) {
     const rootState = getState() as TRootState;
 
