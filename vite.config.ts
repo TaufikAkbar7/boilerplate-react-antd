@@ -4,12 +4,9 @@ import eslint from "vite-plugin-eslint";
 import * as path from "path";
 
 export default defineConfig({
-  plugins: [
-    react(),
-    eslint()
-  ],
+  plugins: [react(), eslint()],
   resolve: {
-    alias: [{ find: "~", replacement: path.resolve(__dirname, "src") }],
+    alias: [{ find: "~", replacement: path.resolve(__dirname, "src") }]
   },
   css: {
     preprocessorOptions: {

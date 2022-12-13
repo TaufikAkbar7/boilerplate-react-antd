@@ -1,5 +1,6 @@
 import { useRoutes } from "react-router-dom";
-import AppLayout from "~/features/app/components/layouts/app-layout-components";
+import { AuthLoginLayout } from "~/features/auth/components";
+import { AppLayout } from "~/features/app/components";
 import useAuthRouter from "~/features/auth/router/auth-router";
 
 const useRouter = () => {
@@ -7,8 +8,12 @@ const useRouter = () => {
 
   const routes = useRoutes([
     {
+      path: "/",
+      element: <AppLayout />
+    },
+    {
       path: "auth",
-      element: <AppLayout />,
+      element: <AuthLoginLayout />,
       children: [...auth]
     },
     { path: "*", element: <span>not found</span> }
