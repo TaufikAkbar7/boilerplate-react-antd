@@ -24,7 +24,8 @@
   },
   "scripts": {
     "dev": "vite --port 3000",
-    "build": "tsc && vite build",
+    "build": "tsc -p tsconfig.prod.json && yarn build:tailwind && vite build",
+    "build:tailwind": "tailwindcss -i src/assets/styles/tailwind.css -o src/assets/styles/tailwind-generated.css --minify",
     "lint": "eslint .",
     "lint:fix": "eslint --fix",
     "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc"
