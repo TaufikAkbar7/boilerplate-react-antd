@@ -7,9 +7,7 @@ const useAuthRouter = (): RouteObject[] => {
   return [
     {
       path: "login",
-      element: (
-        <App />
-      )
+      element: <App />
     }
   ];
 };
